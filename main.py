@@ -17,10 +17,10 @@ def main():
     # Initialize the .env file if --init flag is provided
     if args.init:
         init_env_file(args)
-    
+
     # Load the .env file and get the set of keys
     env_keys = get_env_keys(env_file_path)
-    
+
     # Load the .env example file and get the set of keys
     example_keys = get_env_keys(example_file_path)
 
@@ -32,12 +32,12 @@ def main():
     # Fix missing keys in the .env.example file if --fix flag is provided
     if args.fix:
         fix_missing_keys(env_file_path, example_file_path)
-    
+
     # Check for empty values in the .env file
     empty_keys = find_empty_keys(env_file_path)
     if empty_keys:
         logging.warning(f"Keys with empty values in '{env_file_path}': {empty_keys}")
-    
+
 def init_parser() -> argparse.ArgumentParser:
     """Initialize the argument parser for the CLI tool."""
     parser = argparse.ArgumentParser(prog="envalidator",
