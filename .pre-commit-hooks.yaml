@@ -1,0 +1,7 @@
+- id: envalidator
+  name: Envalidator
+  description: A tool to validate .env files against a .env.example template.
+  entry: python main.py
+  language: python
+  files: ^.env(\.example)?$
+  pass_filenames: false
